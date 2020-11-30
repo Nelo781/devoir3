@@ -1,0 +1,18 @@
+
+version: "3"
+
+services:
+  manager:
+    build:
+      context: "./manager"
+    environment:
+      CSV_FILENAME: "data.csv"
+      POSTGRES_USER: "jules"
+      POSTGRES_PASSWORD: "root"
+  
+  db:
+    image: "postgres:latest"
+    environment:
+      POSTGRES_USER: "jules"
+      POSTGRES_PASSWORD: "root"
+      CSV_FILENAME: "data.csv"
